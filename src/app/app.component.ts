@@ -26,18 +26,23 @@ export class AppComponent implements OnInit {
   items: Observable<Item[]>;
 
   constructor(private store: Store<{list: Item[]}>){
-
+    debugger;
   }
 
   addItem(title: string) {
+      debugger;
       this.store.dispatch(new AddItem({title, completed: false}));
+      debugger;
   }
 
   removeItem(item: Item) {
+      debugger;
       this.store.dispatch(new RemoveItem(item));
+      debugger;
   }
 
   ngOnInit(): void {
+    debugger;
     this.items = this.store.select(selectList);
   }
 }
